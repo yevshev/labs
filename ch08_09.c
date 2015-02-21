@@ -21,36 +21,36 @@ int main(void)
 			board[i][j] = '.';
 		}
 	}
+
 	i = 0;
 	j = 0;
 
 	for (k = 'A'; k <= 'Z';) {
-		if (board[i][j] == '.')
+		if (board[i][j] == '.' && i > -1 && i < 10 && j > -1 && j < 10)
 			board[i][j] = k++;
 		switch (rand() % 4) {
 			case 0:
-				if (i > 0 && board[i - 1][j] == '.') {
+				if (i > 0 && board[i - 1][j] == '.')
 					i--;
-				}
 				break;
 			case 1:
-				if (i < 9 && board[i + 1][j] == '.') {
+				if (i < 9 && board[i + 1][j] == '.') 
 					i++;
-				}
 				break;
 			case 2:
-				if (j > 0 && board[i][j - 1] == '.') {
+				if (j > 0 && board[i][j - 1] == '.')
 					j--;
-				}
 				break;
 			case 3:
-				if (i < 9 && board[i][j + 1] == '.') {
+				if (j < 9 && board[i][j + 1] == '.') 
 					j++;
-				}
-				break;		
-			}
+				break;
+			default: 
+					k--;
+		}
 			if (board[i - 1][j] != '.' &&
-					board[i + 1][j] != '.' && board[i][j - 1] != '.' && 
+					board[i + 1][j] != '.' && 
+					board[i][j - 1] != '.' && 
 					board[i][j + 1] != '.')
 				break;
 	  }
