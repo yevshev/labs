@@ -1,5 +1,5 @@
-/*Name: ch08_09.c
- *Purpose: generates "random walk"
+/*Name: ch09_03.c
+ *Purpose: add functions to "random walk"
  *Date: 02/19/2015
  *Author: Yevgeniy Shevekhman
  */
@@ -12,7 +12,6 @@ char board[10][10];
 int i, j;
 char k;
 time_t t;
-//srand((unsigned) time(&t));
 
 void generate_random_walk(char board[10][10])
 {
