@@ -12,7 +12,7 @@ char board[10][10];
 int i, j;
 char k;
 time_t t;
-srand((unsigned) time(&t));
+//srand((unsigned) time(&t));
 
 void generate_random_walk(char board[10][10])
 {
@@ -24,6 +24,7 @@ void generate_random_walk(char board[10][10])
 
 	i = 0;
 	j = 0;
+	srand((unsigned) time(&t));
 
 	for (k = 'A'; k <= 'Z';) {
 		if (board[i][j] == '.' && i > -1 && i < 10 && j > -1 && j < 10)
@@ -68,7 +69,7 @@ void print_array(char board[10][10])
 
 int main(void)
 {
-	void generate_random_walk(char board[10][10]);
-	void print_array(char board[10][10];
+	generate_random_walk(board);
+	print_array(board);
 	return 0;
 }
